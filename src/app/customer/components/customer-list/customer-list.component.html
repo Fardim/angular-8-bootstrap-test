@@ -1,0 +1,44 @@
+<div *ngFor="let alert of alerts">
+  <alert
+    [type]="alert.type"
+    [dismissOnTimeout]="alert.timeout"
+    (onClosed)="onClosed(alert)"
+    >{{ alert.msg }}</alert
+  >
+</div>
+
+<div>
+  <div class="d-flex flex-row justify-content-between align-items-center my-3">
+    <h3>{{ "CUSTOMERS" | translate }}</h3>
+    <button type="button" class="btn btn-primary" (click)="postCustomer()">
+      {{ "POST" | translate }}
+    </button>
+  </div>
+  <ngx-datatable
+    [rows]="rows"
+    [columns]="columns"
+    [columnMode]="'force'"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    rowHeight="auto"
+    [selectionType]="'single'"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    [rowClass]="getRowClass"
+    class="material"
+  >
+  </ngx-datatable>
+</div>
+
+<ng-template
+  #headerTemplate
+  let-column="column"
+  let-sort="sortFn"
+  ngx-datatable-header-template
+>
+  <span class="datatable-header-cell-wrapper">
+    <span class="datatable-header-cell-label draggable" (click)="sort(column)">
+      {{ column.name | translate }}
+    </span>
+  </span>
+</ng-template>

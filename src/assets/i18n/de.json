@@ -1,0 +1,10 @@
+{
+  "ID": "Id",
+  "FIRST_NAME": "Vorname",
+  "LAST_NAME": "Nachname",
+  "LOCATION": "Standort",
+  "ACTIVE": "Aktiv",
+  "CUSTOMERS": "Kunden",
+  "POST": "Beitrag",
+  "STATE": "Zustand"
+}

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  api: "https://ballistictest.azurewebsites.net/api",
+  production: true,
 };

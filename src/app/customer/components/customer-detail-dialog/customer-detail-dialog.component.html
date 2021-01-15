@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Customer Details</h4>
+  <button
+    type="button"
+    class="close pull-right"
+    aria-label="Close"
+    (click)="bsModalRef.hide()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body d-flex flex-column justify-content-start">
+  <div>
+    <i class="fa fa-id-card mr-3"></i> <span>{{ customer?.id }}</span>
+  </div>
+  <div>
+    <i class="fa fa-user mr-3"></i> <span>{{ customer?.firstName }}</span>
+  </div>
+  <div>
+    <i class="fa fa-user mr-3"></i> <span>{{ customer?.lastName }}</span>
+  </div>
+  <div>
+    <i class="fa fa-map-marker mr-3"></i>
+    <span>{{ customer?.location }} - {{ customer?.stateName }}</span>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">
+    Close
+  </button>
+</div>
